@@ -28,19 +28,19 @@ export const Home = React.memo(() => {
       <Helmet>
         <link
           rel="stylesheet"
-          href="https://product.nadi3docms.com/nadidemo4/assets/css/font-awesome.min.css"
+          href="https://siemensproduct.nadi3docms.com/nadidemo4/assets/css/font-awesome.min.css"
         />
         <link
           rel="stylesheet"
-          href="https://product.nadi3docms.com/nadidemo4/assets/css/owl.carousel.css"
+          href="https://siemensproduct.nadi3docms.com/nadidemo4/assets/css/owl.carousel.css"
         />
         <link
           rel="stylesheet"
-          href="https://product.nadi3docms.com/nadidemo4/assets/css/style.css"
+          href="https://siemensproduct.nadi3docms.com/nadidemo4/assets/css/style.css"
         />
         <link
           rel="stylesheet"
-          href="https://product.nadi3docms.com/nadidemo4/assets/css/animate.css"
+          href="https://siemensproduct.nadi3docms.com/nadidemo4/assets/css/animate.css"
         />
       </Helmet>
       <Page>

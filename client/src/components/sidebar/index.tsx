@@ -1,17 +1,10 @@
 import React, { useState, useCallback } from 'react';
-// import dayjs from 'dayjs';
-// import { Trans, useTranslation } from 'react-i18next';
 import { styled } from 'client/src/styles';
-import { Event } from 'shared/entities/event';
-// import { EventCard } from 'client/src/components/event-card';
-// import { EventCardPlaceholders } from './placeholder';
 import { sidebarWidth } from 'client/src/styles/constants';
 
-// import HomeIcon from '@material-ui/icons/Home';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import StorageIcon from '@material-ui/icons/Storage';
 import WebAssetIcon from '@material-ui/icons/WebAsset';
-// import ReceiptIcon from '@material-ui/icons/Receipt';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import SidebarContainer from './sidebarcontainer';
@@ -77,37 +70,8 @@ const ExpandButton = styled.button`
   }
 `;
 
-// const Title = styled.h2`
-//   margin-bottom: 8px;
-//   font-size: 16px;
-
-//   & > strong {
-//     color: ${({ theme }) => theme.highlightNormal};
-//   }
-// `;
-
-// const List = styled.ul`
-//   display: block;
-// `;
-
-// const ListItem = styled.li`
-//   display: block;
-// `;
-
 export const Sidebar = () => {
-  // const { events } = props;
-  // const { t } = useTranslation();
   const [expanded, changeIfExpanded] = useState(false);
-
-  // const unfinishedEvents = events.filter(event =>
-  //   dayjs(event.end_date).isAfter(dayjs()),
-  // );
-
-  // const streamingEvents = events.filter(
-  //   event =>
-  //     dayjs(event.start_date).isBefore(dayjs()) &&
-  //     dayjs(event.end_date).isAfter(dayjs()),
-  // );
 
   const toggleIfExpanded = useCallback(() => changeIfExpanded(!expanded), [
     expanded,
@@ -119,7 +83,6 @@ export const Sidebar = () => {
   }
 
   const items = [
-    // { name: 'home', label: 'Home', Icon: HomeIcon },
     {
       name: 'managealarm',
       label: 'Manage Alarm',
@@ -146,16 +109,6 @@ export const Sidebar = () => {
             { name: 'DeleteCold', label: 'Delete', onClick },
           ],
         },
-        // {
-        //   name: 'createhot',
-        //   label: 'Hot Data',
-        //   items: [
-        //     { name: 'CreateHot', label: 'Create', onClick },
-        //     { name: 'updatehot', label: 'Update', onClick },
-        //     { name: 'queryhot', label: 'Query', onClick },
-        //     { name: 'deletehot', label: 'Delete', onClick },
-        //   ],
-        // },
         { name: 'Schedule', label: 'Schedule', onClick },
       ],
     },
@@ -201,76 +154,12 @@ export const Sidebar = () => {
     },
   ];
 
-  // function Sidebar({ items }) {
-  //   return (
-  //     <List disablePadding dense>
-  //       {items.map(({ label, name, items: subItems, ...rest }) => {
-  //         return (
-  //           <React.Fragment key={name}>
-  //             <ListItem style={{ paddingLeft: 18 }} button {...rest}>
-  //               <ListItemText>{label}</ListItemText>
-  //             </ListItem>
-  //             {Array.isArray(subItems) ? (
-  //               <List disablePadding dense>
-  //                 {subItems.map((subItem) => {
-  //                   return (
-  //                     <ListItem
-  //                       key={subItem.name}
-  //                       style={{ paddingLeft: 36 }}
-  //                       button
-  //                       dense
-  //                     >
-  //                       <ListItemText>
-  //                         <span className="sidebar-subitem-text">
-  //                           {subItem.label}
-  //                         </span>
-  //                       </ListItemText>
-  //                     </ListItem>
-  //                   )
-  //                 })}
-  //               </List>
-  //             ) : null}
-  //           </React.Fragment>
-  //         )
-  //       })}
-  //     </List>
-  //   )
-  // }
-
   return (
     <Wrapper id="sidebar" expanded={expanded} aria-expanded={expanded}>
       <ExpandButton aria-controls="sidebar" onClick={toggleIfExpanded}>
         <hr />
       </ExpandButton>
 
-      {/* <Title>
-        {streamingEvents.length > 0 ? (
-          <Trans i18nKey="sidebar.title" count={streamingEvents.length}>
-            <strong>{{ count: streamingEvents.length }}</strong> streaming is on
-            air
-          </Trans>
-        ) : (
-            t('sidebar.no_streaming', {
-              defaultValue: "There's no streaming on air",
-            })
-          )}
-      </Title>
-
-      <List>
-        {unfinishedEvents.length ? (
-          unfinishedEvents.map((event, i) => (
-            <ListItem
-              key={event.id}
-              aria-setsize={events.length}
-              aria-posinset={i + 1}
-            >
-              <EventCard event={event} />
-            </ListItem>
-          ))
-        ) : (
-            <EventCardPlaceholders />
-          )}
-      </List> */}
       <SidebarContainer items={items} />
     </Wrapper>
   );

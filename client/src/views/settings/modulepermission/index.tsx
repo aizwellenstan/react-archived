@@ -650,35 +650,6 @@ export const ModulePermission = () => {
           <td>{GWMonitorCheckbox}</td>
         </tr>
         <br />
-        <tr>
-          <td colSpan={6} style={{textAlign:"center"}}>
-            EditorModeMainMenuBar
-          </td>
-        </tr>
-        <tr>
-          <td colSpan={3} style={{textAlign:"center"}}>
-            Desktop
-          </td>
-          <td colSpan={3} style={{textAlign:"center"}}>
-            HandHeld
-          </td>
-        </tr>
-        <tr> 
-          <td>Manager</td>
-          <td>User</td>
-          <td>Guest</td>
-          <td>Manager</td>
-          <td>User</td>
-          <td>Guest</td>
-        </tr>
-        <tr>
-          <td>{MDEditorCheckbox}</td>
-          <td>{UDEditorCheckbox}</td>
-          <td>{GDEditorCheckbox}</td>
-          <td>{MHEditorCheckbox}</td>
-          <td>{UHEditorCheckbox}</td>
-          <td>{GHEditorCheckbox}</td>
-        </tr>
       </table>,
       <button onClick={()=>{handleSubmit()}}>Submmit</button>
     )
